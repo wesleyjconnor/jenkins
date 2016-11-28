@@ -1,0 +1,24 @@
+
+//not currently required
+/**
+
+import com.cloudbees.plugins.credentials.impl.*;
+import com.cloudbees.plugins.credentials.*;
+import com.cloudbees.plugins.credentials.domains.*;
+import hudson.model.*;
+import hudson.util.*;
+
+
+String x = """-----BEGIN RSA PRIVATE KEY-----
+-----END RSA PRIVATE KEY-----
+"""
+
+def file1 = new File("/tmp/key")
+file1.write x
+
+def ksm1 = new CertificateCredentialsImpl.FileOnMasterKeyStoreSource("/tmp/key")
+Credentials ck1 = new CertificateCredentialsImpl(CredentialsScope.GLOBAL,"bb-deploy-key", "description", "", ksm1)
+
+SystemCredentialsProvider.getInstance().getStore().addCredentials(Domain.global(), ck1)
+
+*/

@@ -1,0 +1,11 @@
+node {
+timestamps {
+    def mvnHome = tool 'm3'
+   stage('Preparation') { 
+      git credentialsId: 'me', url: 'https://{url}/{repo}.git'
+   }
+   stage('Build') {
+         sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean install"
+   }
+}
+}
