@@ -4,7 +4,7 @@ def makeMultiBranchPipeline(def appname, def gitUrl) {
 
         branchSources {
             git {
-                remote("gitUrl)
+                remote("gitUrl")
                 credentialsId('my-id')
             }
         }
